@@ -51,27 +51,28 @@ jobs:
             echo "Generating cheatsheet for topic: $topic"
             
             # Create a more robust API call
-            response=$(curl https://api.openai.com/v1/chat/completions \
-              -s \
-              -H "Authorization: Bearer $OPENAI_API_KEY" \
-              -H "Content-Type: application/json" \
-              -d @- << EOF
+            cat > payload.json <<EOF
             {
-              "model": "gpt-4",
-              "messages": [
+            "model": "gpt-4",
+            "messages": [
                 {
-                  "role": "system", 
-                  "content": "You are an expert at creating concise, information-dense cheat sheets. Create only valid HTML with Tailwind CSS classes. Do not include any markdown or explanation - ONLY the HTML content."
+                "role": "system",
+                "content": "You are an expert at creating concise, information-dense cheat sheets. Create only valid HTML with Tailwind CSS classes. Do not include any markdown or explanation - ONLY the HTML content."
                 },
                 {
-                  "role": "user", 
-                  "content": "Generate a dense, printable, Tailwind-styled HTML cheat sheet for: $topic. Include common commands, syntax, and best practices."
+                "role": "user",
+                "content": "Generate a dense, printable, Tailwind-styled HTML cheat sheet for: $topic. Include common commands, syntax, and best practices."
                 }
-              ],
-              "temperature": 0.7
+            ],
+            "temperature": 0.7
             }
             EOF
-            )
+
+            response=$(curl -s https://api.openai.com/v1/chat/completions \
+            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d @payload.json)
+
             
             # Debug the API response
             echo "API Response:"
