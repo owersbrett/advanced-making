@@ -1,0 +1,39 @@
+name: Validate Cheatsheet Links
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # daily at 6am UTC
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Parse core.js and validate HTML files
+        run: |
+          echo "Checking cheatsheet entries in core.js..."
+
+          # Extract JS array from core.js
+          cheatsheets=$(awk '/const cheatsheets = \[/, /\]/{ print }' core.js \
+            | grep -v '//NEW-CHEATSHEET' \
+            | grep -o '"[^"]\+"' \
+            | sed 's/"//g')
+
+          missing=0
+          for sheet in $cheatsheets; do
+            file="cheatsheets/${sheet}.html"
+            if [ ! -f "$file" ]; then
+              echo "❌ Missing: $file"
+              missing=1
+            fi
+          done
+
+          if [ "$missing" -eq 0 ]; then
+            echo "✅ Valid"
+          else
+            echo "❌ Invalid"
+            exit 1
+          fi
