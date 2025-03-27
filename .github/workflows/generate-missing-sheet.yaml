@@ -63,12 +63,10 @@ jobs:
           git add cheatsheets/${{ steps.find_missing.outputs.missing }}.html
           git commit -m "Add cheat sheet: ${{ steps.find_missing.outputs.missing }}"
 
-          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git
-          git push origin $branch
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git $branch
 
-          gh auth login --with-token <<< "$GH_PAT"
-          gh pr create --base main --head $branch \
+          GH_TOKEN=${{ secrets.GH_PAT }} gh pr create \
+            --base main \
+            --head $branch \
             --title "Add cheat sheet: ${{ steps.find_missing.outputs.missing }}" \
             --body "This PR adds the generated cheat sheet for ${{ steps.find_missing.outputs.missing }}."
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
