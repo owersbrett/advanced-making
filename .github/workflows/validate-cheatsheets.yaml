@@ -2,8 +2,9 @@ name: Validate Cheatsheet Links
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # daily at 6am UTC
+    - cron: '0 6 * * *'
   workflow_dispatch:
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -25,7 +26,7 @@ jobs:
           for sheet in $cheatsheets; do
             file="cheatsheets/${sheet}.html"
             if [ ! -f "$file" ]; then
-              echo "Missing: $file"
+              echo "❌ Missing: $file"
               missing=1
             fi
           done
@@ -43,11 +44,23 @@ jobs:
     if: needs.validate.outputs.result == 'valid'
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 All cheatsheets are valid!"
+      - name: Dispatch HTML validator
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -d '{"event_type":"run-html-validator"}'
 
   on-invalid:
     needs: validate
     if: needs.validate.outputs.result == 'invalid'
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🚨 Missing cheatsheet(s)! Time to generate more."
+      - name: Dispatch cheat sheet generator
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -d '{"event_type":"generate-missing-cheatsheet"}'

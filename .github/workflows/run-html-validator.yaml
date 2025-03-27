@@ -1,0 +1,31 @@
+name: Validate HTML Files
+
+on:
+  repository_dispatch:
+    types: [run-html-validator]
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Validate all cheatsheet HTML files
+        run: |
+          echo "Validating HTML files in /cheatsheets..."
+          failed=0
+          for file in cheatsheets/*.html; do
+            echo "Checking $file"
+            tidy -errors -quiet "$file" || failed=1
+          done
+          if [ "$failed" -eq 0 ]; then
+            echo "✅ All HTML files are valid"
+          else
+            echo "❌ HTML validation failed"
+            exit 1
+          fi
+        shell: bash
+
+      - name: Install tidy
+        run: sudo apt-get install tidy -y
