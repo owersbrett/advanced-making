@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Actions Cheat Sheet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @media print {
+      body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+        page-break-after: always;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 font-sans p-6">
+  <main class="max-w-5xl mx-auto">
+
+    <!-- Page 1 -->
+    <section class="page grid grid-cols-2 gap-6">
+      <!-- Column 1 -->
+      <div>
+        <h2 class="text-xl font-bold mb-2">Core Concepts</h2>
+        <table class="table-auto text-sm w-full">
+          <tbody>
+            <tr><td class="font-semibold">Workflow</td><td>.github/workflows/*.yml</td></tr>
+            <tr><td class="font-semibold">Job</td><td>Runs on a VM or container</td></tr>
+            <tr><td class="font-semibold">Step</td><td>Individual command or action</td></tr>
+            <tr><td class="font-semibold">Runner</td><td>Where job executes</td></tr>
+            <tr><td class="font-semibold">Trigger</td><td>on: push / pull_request / schedule</td></tr>
+            <tr><td class="font-semibold">Environment</td><td>Separate settings for deploy contexts</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Column 2 -->
+      <div>
+        <h2 class="text-xl font-bold mb-2">Common Actions</h2>
+        <table class="table-auto text-sm w-full">
+          <tbody>
+            <tr><td class="font-semibold">Checkout</td><td>actions/checkout@v3</td></tr>
+            <tr><td class="font-semibold">Setup Node</td><td>actions/setup-node@v3</td></tr>
+            <tr><td class="font-semibold">Upload Artifact</td><td>actions/upload-artifact@v3</td></tr>
+            <tr><td class="font-semibold">Download Artifact</td><td>actions/download-artifact@v3</td></tr>
+            <tr><td class="font-semibold">Cache</td><td>actions/cache@v3</td></tr>
+            <tr><td class="font-semibold">Deploy to GH Pages</td><td>peaceiris/actions-gh-pages@v3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Page 2 -->
+    <section class="page grid grid-cols-2 gap-6 mt-6">
+      <!-- Column 3 -->
+      <div>
+        <h2 class="text-xl font-bold mb-2">Advanced Usage</h2>
+        <table class="table-auto text-sm w-full">
+          <tbody>
+            <tr><td class="font-semibold">Matrix</td><td>Run across OS/versions</td></tr>
+            <tr><td class="font-semibold">Secrets</td><td>Encrypted variables</td></tr>
+            <tr><td class="font-semibold">Outputs</td><td>Pass values between steps</td></tr>
+            <tr><td class="font-semibold">Reusable Workflows</td><td>Call other workflows via `uses:`</td></tr>
+            <tr><td class="font-semibold">Environments</td><td>Define protection rules</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Column 4 -->
+      <div>
+        <h2 class="text-xl font-bold mb-2">Examples & Next Steps</h2>
+        <table class="table-auto text-sm w-full">
+          <tbody>
+            <tr><td class="font-semibold">Example</td><td>Deploy on Push to Main</td></tr>
+            <tr><td class="font-semibold">Related</td><td>Fastlane, TestFlight, Pages</td></tr>
+            <tr><td class="font-semibold">Prerequisites</td><td>YAML syntax, GitHub Repo</td></tr>
+            <tr><td class="font-semibold">Next</td><td>Setup CI/CD with secrets & deploy</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
