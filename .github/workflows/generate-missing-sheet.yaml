@@ -70,3 +70,5 @@ jobs:
             --head $branch \
             --title "Add cheat sheet: ${{ steps.find_missing.outputs.missing }}" \
             --body "This PR adds the generated cheat sheet for ${{ steps.find_missing.outputs.missing }}."
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
