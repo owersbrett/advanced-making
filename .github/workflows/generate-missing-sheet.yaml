@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      GH_PAT: ${{ secrets.GH_PAT }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -23,7 +24,7 @@ jobs:
         run: |
           cheatsheets=$(awk '/const cheatsheets = \[/, /\]/{ print }' core.js \
             | grep -v '//NEW-CHEATSHEET' \
-            | grep -o '"[^"]\+"' \
+            | grep -o '"[^\"]\+"' \
             | sed 's/"//g')
 
           missing=""
@@ -61,10 +62,10 @@ jobs:
           git checkout -b $branch
           git add cheatsheets/${{ steps.find_missing.outputs.missing }}.html
           git commit -m "Add cheat sheet: ${{ steps.find_missing.outputs.missing }}"
-          git push origin $branch
+          git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git $branch
 
           gh pr create --base main --head $branch \
             --title "Add cheat sheet: ${{ steps.find_missing.outputs.missing }}" \
             --body "This PR adds the generated cheat sheet for ${{ steps.find_missing.outputs.missing }}."
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
