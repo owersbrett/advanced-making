@@ -1,0 +1,38 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Android UI Testing Frameworks Cheat Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-8">
+    <div class="grid grid-cols-3 gap-4">
+        <div class="text-center bg-blue-200 p-3 rounded-lg">
+            <h2 class="text-lg font-bold mb-2">Espresso</h2>
+            <pre class="text-sm">onView(withId(R.id.my_view))<br>.perform(click());</pre>
+            <pre class="text-sm">onView(withText("Hello"))<br>.check(matches(isDisplayed()));</pre>
+        </div>
+        <div class="text-center bg-green-200 p-3 rounded-lg">
+            <h2 class="text-lg font-bold mb-2">UI Automator</h2>
+            <pre class="text-sm">new UiScrollable(new UiSelector()<br>.scrollable(true).instance(0))<br>.scrollIntoView(new UiSelector()<br>.textContains("@string/my_string").instance(0));</pre>
+            <pre class="text-sm">UiObject checkBox = mDevice.findObject(new UiSelector().checkable(true));</pre>
+        </div>
+        <div class="text-center bg-yellow-200 p-3 rounded-lg">
+            <h2 class="text-lg font-bold mb-2">Robolectric</h2>
+            <pre class="text-sm">ActivityScenario.launch(LoginActivity.class);</pre>
+            <pre class="text-sm">Robolectric.setupActivity(MyActivity.class);</pre>
+        </div>
+    </div>
+    <div class="mt-6 bg-red-200 p-3 rounded-lg">
+        <h2 class="text-lg font-bold mb-2 text-center">Best Practices</h2>
+        <ul class="list-disc ml-5 text-sm">
+            <li>Use Espresso for UI tests within an app.</li>
+            <li>Use UI Automator for testing between apps and system features.</li>
+            <li>Use Robolectric for fast running tests that do not need Android runtime.</li>
+            <li>Test early, test often: Use TDD/BDD principles.</li>
+            <li>Always run the full test suite before a release.</li>
+        </ul>
+    </div>
+</body>
+</html>
+```
