@@ -1,0 +1,41 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+  <title>Angular Testing Cheat Sheet</title>
+</head>
+<body class="bg-gray-200 p-6">
+  <div class="flex flex-wrap justify-around">
+    <!-- Common Commands -->
+    <div class="bg-white p-4 m-2 rounded shadow-lg w-full md:w-1/2 lg:w-1/3">
+      <h2 class="text-lg font-semibold mb-2">Common Commands</h2>
+      <ul class="list-disc ml-5">
+        <li class="mb-2">ng test</li>
+        <li class="mb-2">ng e2e</li>
+      </ul>
+    </div>
+    <!-- Syntax -->
+    <div class="bg-white p-4 m-2 rounded shadow-lg w-full md:w-1/2 lg:w-1/3">
+      <h2 class="text-lg font-semibold mb-2">Syntax</h2>
+      <ul class="list-disc ml-5">
+        <li class="mb-2">describe('Component', () => {})</li>
+        <li class="mb-2">it('should do something', () => {})</li>
+        <li class="mb-2">beforeEach(async(() => {}))</li>
+      </ul>
+    </div>
+    <!-- Best Practices -->
+    <div class="bg-white p-4 m-2 rounded shadow-lg w-full md:w-1/2 lg:w-1/3">
+      <h2 class="text-lg font-semibold mb-2">Best Practices</h2>
+      <ul class="list-disc ml-5">
+        <li class="mb-2">Keep tests DRY</li>
+        <li class="mb-2">Test one thing at a time</li>
+        <li class="mb-2">Use beforeEach for setup</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
+```
