@@ -1,0 +1,57 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Angular UI Testing Cheat Sheet</title>
+</head>
+<body class="p-10 bg-gray-200">
+    <div class="container mx-auto bg-white p-6 rounded-lg">
+        <h1 class="text-4xl font-bold mb-6 text-center">Angular UI Testing Cheat Sheet</h1>
+
+        <div class="grid grid-cols-2 gap-4">
+
+            <!-- Common Commands -->
+            <div class="p-4 shadow-lg rounded-lg">
+                <h2 class="text-2xl font-bold mb-4">Common Commands</h2>
+                <pre class="p-4 bg-gray-100 rounded-lg text-sm">
+ng new my-app
+ng serve
+ng test
+ng e2e
+                </pre>
+            </div>
+
+            <!-- Syntax -->
+            <div class="p-4 shadow-lg rounded-lg">
+                <h2 class="text-2xl font-bold mb-4">Syntax</h2>
+                <pre class="p-4 bg-gray-100 rounded-lg text-sm">
+describe('Component: Home', () => {
+  beforeEach(() => {
+    // Setup
+  });
+
+  it('should create', () => {
+    // Test
+  });
+});
+                </pre>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="p-4 shadow-lg rounded-lg col-span-2">
+                <h2 class="text-2xl font-bold mb-4">Best Practices</h2>
+                <ul class="list-disc pl-5 text-sm">
+                    <li>Keep tests dry and clean.</li>
+                    <li>Test behavior, not implementation.</li>
+                    <li>Use async/await for handling promises.</li>
+                    <li>Use Page Object to organize tests.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
