@@ -1,0 +1,36 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS UI Testing Cheat Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-6 bg-gray-100">
+    <div class="container mx-auto">
+        <h1 class="text-4xl font-bold mb-4">iOS UI Testing Cheat Sheet</h1>
+        <div class="grid grid-cols-3 gap-4">
+            <div class="p-4 bg-white shadow-md rounded">
+                <h2 class="text-2xl font-bold mb-2">Common Commands</h2>
+                <p class="font-mono text-sm">XCTAssert(app.buttons["Button"].exists)</p>
+                <p class="font-mono text-sm">app.buttons["Button"].tap()</p>
+                <p class="font-mono text-sm">app.textFields["TextField"].typeText("Hello")</p>
+            </div>
+            <div class="p-4 bg-white shadow-md rounded">
+                <h2 class="text-2xl font-bold mb-2">Syntax</h2>
+                <p class="font-mono text-sm">let app = XCUIApplication()</p>
+                <p class="font-mono text-sm">app.launch()</p>
+                <p class="font-mono text-sm">app.terminate()</p>
+            </div>
+            <div class="p-4 bg-white shadow-md rounded">
+                <h2 class="text-2xl font-bold mb-2">Best Practices</h2>
+                <p class="font-mono text-sm">Use Accessibility Identifiers</p>
+                <p class="font-mono text-sm">Keep Tests Short & Focused</p>
+                <p class="font-mono text-sm">Use setUp() and tearDown() for setup & cleanup</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
