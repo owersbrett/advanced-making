@@ -1,0 +1,19 @@
+name: Auto Merge PRs from feature/add-*
+
+on:
+  pull_request:
+    types: [opened, synchronize, edited]
+
+jobs:
+  auto-merge:
+    if: startsWith(github.head_ref, 'feature/add-')
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - name: Merge PR
+        run: gh pr merge "$PR_URL" --merge --admin
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
