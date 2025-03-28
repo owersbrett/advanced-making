@@ -1,0 +1,44 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android UI Testing Tools Cheat Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-10 bg-gray-200">
+    <div class="grid grid-cols-2 gap-4">
+        <div class="p-4 bg-white shadow-md rounded">
+            <h1 class="text-xl font-bold mb-2">Espresso</h1>
+            <p class="text-sm mb-1">Initiate Espresso Test: </p>
+            <code class="text-xs p-1 bg-gray-100 rounded">./gradlew connectedAndroidTest</code>
+        </div>
+        <div class="p-4 bg-white shadow-md rounded">
+            <h1 class="text-xl font-bold mb-2">UI Automator</h1>
+            <p class="text-sm mb-1">Initiate UI Automator Test: </p>
+            <code class="text-xs p-1 bg-gray-100 rounded">./gradlew connectedCheck</code>
+        </div>
+        <div class="p-4 bg-white shadow-md rounded">
+            <h1 class="text-xl font-bold mb-2">Robolectric</h1>
+            <p class="text-sm mb-1">Initiate Robolectric Test: </p>
+            <code class="text-xs p-1 bg-gray-100 rounded">./gradlew test</code>
+        </div>
+        <div class="p-4 bg-white shadow-md rounded">
+            <h1 class="text-xl font-bold mb-2">Barista</h1>
+            <p class="text-sm mb-1">Initiate Barista Test: </p>
+            <code class="text-xs p-1 bg-gray-100 rounded">./gradlew testDebugUnitTest</code>
+        </div>
+    </div>
+    <div class="mt-10 p-4 bg-white shadow-md rounded">
+        <h1 class="text-xl font-bold mb-2">Best Practices</h1>
+        <ul class="list-disc pl-5">
+            <li class="text-sm mb-1">Use matchers for UI interactions</li>
+            <li class="text-sm mb-1">Always wait for UI events</li>
+            <li class="text-sm mb-1">Avoid flaky tests</li>
+            <li class="text-sm mb-1">Clean up after tests</li>
+        </ul>
+    </div>
+</body>
+</html>
+```
