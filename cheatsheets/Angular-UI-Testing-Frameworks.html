@@ -1,0 +1,44 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular UI Testing Frameworks Cheat Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-10 bg-gray-100 text-sm">
+    <div class="container mx-auto">
+        <div class="bg-white rounded-lg shadow-lg p-6 mx-2">
+            <h1 class="text-2xl font-bold mb-4">Angular UI Testing Frameworks Cheat Sheet</h1>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-gray-200 rounded p-4">
+                    <h2 class="text-xl font-bold mb-2">Protractor</h2>
+                    <p class="text-md mb-1">Installation: <code class="bg-gray-300 p-1 rounded">npm install -g protractor</code></p>
+                    <p class="text-md mb-1">Run tests: <code class="bg-gray-300 p-1 rounded">protractor conf.js</code></p>
+                    <p class="text-md mb-1">Update WebDriver: <code class="bg-gray-300 p-1 rounded">webdriver-manager update</code></p>
+                </div>
+                <div class="bg-gray-200 rounded p-4">
+                    <h2 class="text-xl font-bold mb-2">Karma</h2>
+                    <p class="text-md mb-1">Installation: <code class="bg-gray-300 p-1 rounded">npm install karma --save-dev</code></p>
+                    <p class="text-md mb-1">Run tests: <code class="bg-gray-300 p-1 rounded">karma start karma.conf.js</code></p>
+                    <p class="text-md mb-1">Run single test: <code class="bg-gray-300 p-1 rounded">fit('test name')</code></p>
+                </div>
+                <div class="bg-gray-200 rounded p-4">
+                    <h2 class="text-xl font-bold mb-2">Jasmine</h2>
+                    <p class="text-md mb-1">Installation: <code class="bg-gray-300 p-1 rounded">npm install -g jasmine</code></p>
+                    <p class="text-md mb-1">Run tests: <code class="bg-gray-300 p-1 rounded">jasmine</code></p>
+                    <p class="text-md mb-1">Describe block: <code class="bg-gray-300 p-1 rounded">describe("description", function(){...})</code></p>
+                </div>
+                <div class="bg-gray-200 rounded p-4">
+                    <h2 class="text-xl font-bold mb-2">Cypress</h2>
+                    <p class="text-md mb-1">Installation: <code class="bg-gray-300 p-1 rounded">npm install cypress --save-dev</code></p>
+                    <p class="text-md mb-1">Run tests: <code class="bg-gray-300 p-1 rounded">npx cypress open</code></p>
+                    <p class="text-md mb-1">Cypress command: <code class="bg-gray-300 p-1 rounded">cy.visit('url')</code></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
