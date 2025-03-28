@@ -1,0 +1,50 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Android Testing Cheat Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-5 bg-gray-200">
+    <div class="container mx-auto">
+        <h1 class="text-center text-3xl font-bold mb-5">Android Testing Cheat Sheet</h1>
+
+        <div class="grid md:grid-cols-2 gap-4">
+
+            <!-- Section 1 -->
+            <div class="p-5 bg-white shadow-md rounded">
+                <h2 class="text-xl font-bold mb-3">Common Commands</h2>
+                <ul class="list-disc pl-5">
+                    <li><code>./gradlew test</code>: Run unit tests</li>
+                    <li><code>./gradlew connectedAndroidTest</code>: Run instrumented tests</li>
+                    <li><code>./gradlew jacocoTestReport</code>: Generate code coverage report</li>
+                </ul>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="p-5 bg-white shadow-md rounded">
+                <h2 class="text-xl font-bold mb-3">Syntax</h2>
+                <ul class="list-disc pl-5">
+                    <li><code>@Test</code>: Marks a method as a test method</li>
+                    <li><code>@Before</code>: Runs before each test</li>
+                    <li><code>@After</code>: Runs after each test</li>
+                    <li><code>@Mock</code>: Creates a mock implementation</li>
+                </ul>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="p-5 bg-white shadow-md rounded">
+                <h2 class="text-xl font-bold mb-3">Best Practices</h2>
+                <ul class="list-disc pl-5">
+                    <li>Write small, focused, single-purpose tests</li>
+                    <li>Separate UI tests from unit tests</li>
+                    <li>Mock out dependencies in unit tests</li>
+                    <li>Use Espresso for UI tests</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
