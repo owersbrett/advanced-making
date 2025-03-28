@@ -1,0 +1,75 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iOS Development Cheat Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.6.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-5">
+    <div class="container mx-auto">
+        <h1 class="text-4xl font-bold mb-5">iOS Development Cheat Sheet</h1>
+
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Swift Basics -->
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-2xl font-bold mb-2">Swift Basics</h2>
+                <pre class="whitespace-pre text-sm bg-gray-200 rounded p-2">let constant = 10
+var variable = 20
+func functionName() {}
+if condition {}
+for item in items {}
+while condition {}
+switch condition { case: do }</pre>
+            </div>
+
+            <!-- UIKit -->
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-2xl font-bold mb-2">UIKit</h2>
+                <pre class="whitespace-pre text-sm bg-gray-200 rounded p-2">import UIKit
+class ClassName: UIViewController
+IBOutlet weak var label: UILabel
+IBAction func buttonPressed()
+performSegue(withIdentifier:sender:)
+prepare(for:sender:) </pre>
+            </div>
+
+            <!-- AutoLayout -->
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-2xl font-bold mb-2">AutoLayout</h2>
+                <pre class="whitespace-pre text-sm bg-gray-200 rounded p-2">NSLayoutConstraint.activate()
+equalTo()
+greaterThanOrEqualTo()
+lessThanOrEqualTo()</pre>
+            </div>
+
+            <!-- Networking -->
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-2xl font-bold mb-2">Networking</h2>
+                <pre class="whitespace-pre text-sm bg-gray-200 rounded p-2">URLSession.shared.dataTask()
+DispatchQueue.main.async()
+try JSONDecoder().decode()</pre>
+            </div>
+
+            <!-- CoreData -->
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-2xl font-bold mb-2">CoreData</h2>
+                <pre class="whitespace-pre text-sm bg-gray-200 rounded p-2">NSManagedObject
+NSFetchRequest
+NSManagedObjectContext
+persistentContainer</pre>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-2xl font-bold mb-2">Best Practices</h2>
+                <pre class="whitespace-pre text-sm bg-gray-200 rounded p-2">- Use MVC, MVVM, or VIPER
+- Write unit tests
+- Use safe unwrapping
+- Follow Swift API design guidelines
+- Keep functions small and focused</pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
