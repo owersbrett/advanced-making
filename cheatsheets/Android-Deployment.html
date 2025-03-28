@@ -1,0 +1,42 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Android Deployment Cheat Sheet</title>
+</head>
+<body class="p-10 bg-gray-100">
+    <div class="container mx-auto">
+        <h1 class="text-4xl font-bold mb-4">Android Deployment Cheat Sheet</h1>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-2">Setting up Gradle</h2>
+                <pre class="text-sm"><code>dependencies {
+    implementation 'com.android.tools.build:gradle:3.5.3'
+}</code></pre>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-2">Building APK</h2>
+                <pre class="text-sm"><code>./gradlew assembleDebug</code></pre>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-2">Running APK on Device</h2>
+                <pre class="text-sm"><code>./gradlew installDebug</code></pre>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-2">Signing APK</h2>
+                <pre class="text-sm"><code>./gradlew assembleRelease</code></pre>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-2">ProGuard Rules</h2>
+                <pre class="text-sm"><code>-keep class * {
+    public *;
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
