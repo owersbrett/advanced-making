@@ -1,0 +1,41 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android UI Testing Cheat Sheet</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 p-6">
+  <div class="container mx-auto p-6 bg-white rounded-xl shadow-md space-y-4">
+    <h1 class="text-4xl font-bold">Android UI Testing Cheat Sheet</h1>
+    <section>
+      <h2 class="text-2xl font-semibold">Common Commands</h2>
+      <ul class="list-disc pl-5">
+        <li>adb shell am instrument -w [test package]/androidx.test.runner.AndroidJUnitRunner</li>
+        <li>gradlew connectedAndroidTest</li>
+        <li>gradlew test</li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="text-2xl font-semibold">Espresso Syntax</h2>
+      <ul class="list-disc pl-5">
+        <li>onView(withId(R.id.view_id)).perform(click())</li>
+        <li>onView(withId(R.id.view_id)).check(matches(isDisplayed()))</li>
+        <li>onView(withText("text")).perform(typeText("input"))</li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="text-2xl font-semibold">Best Practices</h2>
+      <ul class="list-disc pl-5">
+        <li>Always clean up after your tests</li>
+        <li>Use Test Doubles for external dependencies</li>
+        <li>Make your tests hermetic</li>
+        <li>Run your tests on real devices whenever possible</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
+```
