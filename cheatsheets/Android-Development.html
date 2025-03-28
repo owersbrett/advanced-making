@@ -1,0 +1,44 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <title>Android Development Cheat Sheet</title>
+</head>
+<body class="p-10 bg-gray-100">
+    <div class="grid grid-cols-2 gap-4">
+        <div class="col-span-1 p-5 bg-white shadow-lg rounded-lg">
+            <h2 class="text-2xl font-bold mb-5">Common Commands</h2>
+            <ul>
+                <li><code>./gradlew build</code> - Build your app</li>
+                <li><code>./gradlew test</code> - Run tests</li>
+                <li><code>./gradlew installDebug</code> - Install debug build</li>
+                <li><code>adb logcat</code> - View log output</li>
+            </ul>
+        </div>
+
+        <div class="col-span-1 p-5 bg-white shadow-lg rounded-lg">
+            <h2 class="text-2xl font-bold mb-5">Syntax</h2>
+            <ul>
+                <li><code>val</code> - Define a read-only property</li>
+                <li><code>var</code> - Define a mutable property</li>
+                <li><code>lateinit var</code> - Late initialization</li>
+                <li><code>::class.java</code> - Get Java class of an object</li>
+            </ul>
+        </div>
+
+        <div class="col-span-2 p-5 bg-white shadow-lg rounded-lg">
+            <h2 class="text-2xl font-bold mb-5">Best Practices</h2>
+            <ul>
+                <li>Use MVVM architecture</li>
+                <li>Use LiveData for reactive UI</li>
+                <li>Avoid memory leaks by careful use of Context</li>
+                <li>Use ProGuard to shrink your APK size</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+```
