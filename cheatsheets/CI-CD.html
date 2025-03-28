@@ -1,0 +1,57 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+    <title>CI/CD Cheat Sheet</title>
+</head>
+<body class="p-10">
+    <div class="container mx-auto bg-white rounded-xl p-6 shadow-lg">
+        <h1 class="text-4xl mb-4 text-center">CI/CD Cheat Sheet</h1>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="border rounded-xl p-4">
+                <h2 class="text-2xl mb-2">Git Commands</h2>
+                <ul class="list-disc ml-5">
+                    <li><code>git clone [url]</code>: Clone repository</li>
+                    <li><code>git pull</code>: Update local repo</li>
+                    <li><code>git branch</code>: List branches</li>
+                    <li><code>git checkout [branch]</code>: Switch branch</li>
+                    <li><code>git add .</code>: Stage all changes</li>
+                    <li><code>git commit -m "[message]"</code>: Commit changes</li>
+                    <li><code>git push origin [branch]</code>: Push changes</li>
+                </ul>
+            </div>
+            <div class="border rounded-xl p-4">
+                <h2 class="text-2xl mb-2">Docker Commands</h2>
+                <ul class="list-disc ml-5">
+                    <li><code>docker build -t [name] .</code>: Build image</li>
+                    <li><code>docker run -p [port]:[port] [name]</code>: Run container</li>
+                    <li><code>docker ps</code>: List running containers</li>
+                    <li><code>docker stop [container_id]</code>: Stop container</li>
+                </ul>
+            </div>
+            <div class="border rounded-xl p-4">
+                <h2 class="text-2xl mb-2">Jenkins Commands</h2>
+                <ul class="list-disc ml-5">
+                    <li><code>java -jar jenkins.war</code>: Start Jenkins</li>
+                    <li><code>java -jar jenkins.war --httpPort=[port]</code>: Start Jenkins on specific port</li>
+                    <li><code>java -jar jenkins-cli.jar -s [jenkins_url] help</code>: Get help</li>
+                </ul>
+            </div>
+            <div class="border rounded-xl p-4">
+                <h2 class="text-2xl mb-2">Best Practices</h2>
+                <ul class="list-disc ml-5">
+                    <li>Use version control</li>
+                    <li>Run tests on a clone of production environment</li>
+                    <li>Use feature branches</li>
+                    <li>Automate deployment process</li>
+                    <li>Monitor application and server health</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
