@@ -1,0 +1,37 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="m-6 p-6">
+  <div class="text-center mb-6">
+    <h1 class="text-4xl font-bold">iOS Testing Cheat Sheet</h1>
+  </div>
+  <div class="grid grid-cols-2 gap-6">
+    <div class="p-4 border-2 rounded-lg">
+      <h2 class="text-2xl font-bold mb-2">Common Commands</h2>
+      <code class="text-sm block mb-2">xcodebuild test -project MyApp.xcodeproj -scheme MyApp</code>
+      <code class="text-sm block mb-2">xcodebuild test -workspace MyApp.xcworkspace -scheme MyApp</code>
+      <code class="text-sm block mb-2">xcodebuild test -destination 'platform=iOS Simulator,name=iPhone 12'</code>
+    </div>
+    <div class="p-4 border-2 rounded-lg">
+      <h2 class="text-2xl font-bold mb-2">Syntax</h2>
+      <code class="text-sm block mb-2">XCTAssert(condition, "message")</code>
+      <code class="text-sm block mb-2">XCTAssertTrue(condition, "message")</code>
+      <code class="text-sm block mb-2">XCTAssertFalse(condition, "message")</code>
+      <code class="text-sm block mb-2">XCTAssertEqual(a, b, "message")</code>
+      <code class="text-sm block mb-2">XCTAssertNotEqual(a, b, "message")</code>
+    </div>
+    <div class="p-4 border-2 rounded-lg">
+      <h2 class="text-2xl font-bold mb-2">Best Practices</h2>
+      <p class="text-sm mb-2">1. Test all business logic.</p>
+      <p class="text-sm mb-2">2. Keep tests independent from one another.</p>
+      <p class="text-sm mb-2">3. Use mock objects to simulate complex data scenarios.</p>
+      <p class="text-sm mb-2">4. Test asynchronous code with expectations.</p>
+      <p class="text-sm mb-2">5. Use code coverage to identify untested code.</p>
+    </div>
+  </div>
+</body>
+</html>
+```
