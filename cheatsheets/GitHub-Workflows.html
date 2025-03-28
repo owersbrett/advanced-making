@@ -1,0 +1,42 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Workflows Cheat Sheet</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-10 bg-gray-100">
+  <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+    <div class="md:flex">
+      <div class="md:flex-shrink-0">
+        <h2 class="text-xl font-bold m-2">GitHub Workflows Cheat Sheet</h2>
+      </div>
+      <div class="p-8">
+        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Common commands</div>
+        <pre class="mt-1 text-gray-500"><code>git clone [url]</code></pre>
+        <pre class="mt-1 text-gray-500"><code>git status</code></pre>
+        <pre class="mt-1 text-gray-500"><code>git add .</code></pre>
+        <pre class="mt-1 text-gray-500"><code>git commit -m "message"</code></pre>
+        <pre class="mt-1 text-gray-500"><code>git push</code></pre>
+        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold mt-4">Workflow syntax</div>
+        <pre class="mt-1 text-gray-500"><code>on:
+  push:
+    branches:
+      - 'main'</code></pre>
+        <pre class="mt-1 text-gray-500"><code>jobs:
+  build:
+    runs-on: ubuntu-latest</code></pre>
+        <pre class="mt-1 text-gray-500"><code>steps:
+  - uses: actions/checkout@v2</code></pre>
+        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold mt-4">Best practices</div>
+        <p class="mt-1 text-gray-500">Use clear and descriptive commit messages.</p>
+        <p class="mt-1 text-gray-500">Keep your workflows as simple as possible.</p>
+        <p class="mt-1 text-gray-500">Use actions created by others when possible.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+```
