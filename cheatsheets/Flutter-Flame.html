@@ -1,0 +1,52 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flutter-Flame Cheat Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mx-auto m-4 p-4">
+        <h1 class="text-4xl font-bold text-center mb-4">Flutter-Flame Cheat Sheet</h1>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="border p-2">
+                <h2 class="font-bold text-xl mb-2">Initialization</h2>
+                <pre class="code"><code>&lt;Flame.util.fullScreen();&gt;
+    &lt;Flame.util.setOrientation(DeviceOrientation.portraitUp);&gt;
+    &lt;runApp(MyApp());&gt;</code></pre>
+            </div>
+            <div class="border p-2">
+                <h2 class="font-bold text-xl mb-2">Game Loop</h2>
+                <pre class="code"><code>&lt;void render(Canvas c)&gt; { /* ... */ }
+    &lt;void update(double t)&gt; { /* ... */ }</code></pre>
+            </div>
+            <div class="border p-2">
+                <h2 class="font-bold text-xl mb-2">Sprites</h2>
+                <pre class="code"><code>&lt;Sprite sprite = await Sprite.load('sprite.png');&gt;
+    &lt;sprite.renderRect(c, rect);&gt;</code></pre>
+            </div>
+            <div class="border p-2">
+                <h2 class="font-bold text-xl mb-2">Sprite Animation</h2>
+                <pre class="code"><code>&lt;SpriteAnimation spriteAnimation = await loadSpriteAnimation('animation.png', SpriteAnimationData.sequenced());&gt;
+    &lt;spriteAnimation.getSprite();&gt;</code></pre>
+            </div>
+            <div class="border p-2">
+                <h2 class="font-bold text-xl mb-2">Input Handlers</h2>
+                <pre class="code"><code>&lt;void onTapDown(TapDownDetails d)&gt; { /* ... */ }
+    &lt;void onDragStart(DragStartDetails d)&gt; { /* ... */ }</code></pre>
+            </div>
+            <div class="border p-2">
+                <h2 class="font-bold text-xl mb-2">Best Practices</h2>
+                <ul>
+                    <li>Use Components for better code organization</li>
+                    <li>Utilize Flame's built-in input handlers</li>
+                    <li>Handle game state appropriately</li>
+                    <li>Use Flame's util methods for device orientation and full screening</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
